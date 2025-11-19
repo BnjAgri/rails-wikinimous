@@ -1,12 +1,15 @@
 <h1>All articles</h1>
 
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <h2><%= link_to article.title, article_path(article) %></h2>
-      <p><%= article.content %></p>
-    </li>
-  <% end %>
-</ul>
-<%= link_to 'New Article', new_article_path %>
-
+<div class="container text-center">
+  <div class="row" >
+    <ul class= "card">
+      <% @articles.each do |article| %>
+        <li>
+          <h2><%= link_to article.title, article_path(article) %></h2>
+          <p><%= article.content %></p>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
+  </div>
+</div>
